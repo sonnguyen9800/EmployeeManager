@@ -14,12 +14,10 @@ if (!isset($page_title)){
     <meta name="author" content="SitePoint">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <link rel="stylesheet" media="all" href="<?php echo ROOT . 'styles/header.css'; ?>">
+    <link rel="stylesheet" media="all" href="<?php echo ROOT . '/public/styles/styles.css'; ?>">
 
-</head>
-
-<body>
-
+    <!-- Header -->
+    
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark navbar-inverse ">
 	<div class="container-fluid">
 	    <div class="navbar-header">
@@ -33,6 +31,11 @@ if (!isset($page_title)){
 	    </ul>
 	</div>
     </nav>
+    
+</head>
+
+
+
 
 
 
