@@ -15,5 +15,5 @@ require_once('functions.php');
 require_once('database.php');
 require_once('db_query.php');
 
-$db = db_connect();
+/* $db = db_connect();*/
 ?>

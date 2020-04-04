@@ -11,9 +11,4 @@
     </div>
 </footer>
 
-
-
 </html>
-<?php
-db_disconnect($db);
-?>
