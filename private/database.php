@@ -24,7 +24,10 @@ function get_all_employees($file){
     while(! feof($file)){
         $line_data = fgetcsv($file);
         $employee = new Employee($line_data);
-        $all_employees[] = $employee;
+	if ($employee->id !='id' and $employee->id !=  null and $employee->id != NULL  ){
+            $all_employees[] = $employee;	    
+	}
+
     }
     fclose($file);
     return $all_employees;
@@ -70,7 +73,7 @@ function delete_employee_by_id($id){
         }
     }
     fclose($file_towrite);
-    // redirect("/Assignment1/index.php");
+    redirect_after_post("/Assignment1/index.php", "delete");
 }
 
 function insert_one_employee($employee){

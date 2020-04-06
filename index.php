@@ -20,27 +20,27 @@ $all_employees = show_all_employees();
 
 <html>
     <?php
-     if( $_GET['status'] == 'success'){
-         include(SHARED_PATH . '/alert-success.php');
-     }elseif($_GET['status'] == 'failed'){
-         include(SHARED_PATH . '/alert-failed.php');
-     }
+    if( $_GET['status'] == 'success'){
+        include(SHARED_PATH . '/alert-success.php');
+    }elseif($_GET['status'] == 'failed'){
+        include(SHARED_PATH . '/alert-failed.php');
+    }elseif($_GET['status'] == 'delete'){
+        include(SHARED_PATH . '/alert-deletedone.php');
+    }
 
 
-   
+    
     $jumbotron_title = "Welcome";
     $jumbotron_subtext = "Be the big boss and control your army!";
     include(SHARED_PATH . '/jumbotron.php') ; ?>
     
     <div class="main-body container border">
 	<?php
-	$count = 0;
+	//$count = 0;
 	foreach ($all_employees as $i_employee){
 	    $employee = $i_employee;
-	    if ($count != 0){
-		include(SHARED_PATH . '/card.php');
-	    }
-	    $count +=1;
+	    include(SHARED_PATH . '/card.php');
+	    
 	}
 	?>
 

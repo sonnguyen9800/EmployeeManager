@@ -29,16 +29,16 @@ if(is_post_request()) {
 <html>
     <?php
     $jumbotron_title = "Remove Employee";
-    $jumbotron_subtext = "Are you sure?";
+    $jumbotron_subtext = "Are you sure you want to remove <strong><u>" . $employee->first_name . " " . $employee->last_name . "</u> </strong>?";
     include(SHARED_PATH . '/jumbotron.php');
     ?>
 
     <div class="main-body container">
-	<?php include(SHARED_PATH . '/card.php') ?>
 	
 	<form action="<?php echo '/Assignment1/public/Employees/delete.php?id=' . h(u($employee->id)); ?>" method="post">
 	    <div id="operations">
-		<input type="submit" name="commit" value="Delete Subject" />
+		<input class="btn btn-primary btn-block" type="submit" name="commit"
+		       value="<?php echo "Remove '" . $employee->first_name . " ". $employee->last_name . "'"; ?>" />
 	    </div>
 	</form>
 	

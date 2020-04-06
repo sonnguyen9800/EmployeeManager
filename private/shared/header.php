@@ -13,8 +13,12 @@ if (!isset($page_title)){
     <title><?php echo $page_title; ?></title>
     <meta name="description" content="The HTML5 Herald">
     <meta name="author" content="SitePoint">
+    <!-- Bootstrap 4 -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <!-- Icon Style -->
+
+    <!-- My Own Style -->
     <link rel="stylesheet" media="all" href="<?php echo '/Assignment1/public/styles/styles.css'; ?>">
 
     <!-- Header -->
