@@ -37,6 +37,11 @@ function redirect($location_path){
     exit();
 }
 
+function redirect_after_post($location_path, $mess){
+    header("Location: ".$location_path ."?status=".$mess);
+    exit();
+}
+
 function is_post_request(){
     return $_SERVER['REQUEST_METHOD'] == 'POST';
     

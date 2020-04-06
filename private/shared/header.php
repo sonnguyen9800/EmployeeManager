@@ -1,6 +1,7 @@
 <?php
 if (!isset($page_title)){
     $page_title = "INDEX";
+
 }
 ?>
 
@@ -14,7 +15,7 @@ if (!isset($page_title)){
     <meta name="author" content="SitePoint">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <link rel="stylesheet" media="all" href="<?php echo ROOT . '/public/styles/styles.css'; ?>">
+    <link rel="stylesheet" media="all" href="<?php echo '/Assignment1/public/styles/styles.css'; ?>">
 
     <!-- Header -->
     
@@ -22,16 +23,16 @@ if (!isset($page_title)){
 	<div class="container-fluid">
 	    <div class="navbar-header">
 		<a class="navbar-brand" href="#"><?php echo $page_title ?></a>
-	    </div>
+	    </div>	    
 	    <ul class="nav navbar-nav">
-		<a href="<?php echo ROOT . '/index.php' ?>" class="btn btn-dark" type="button" >Home</a>
-		<a href="<?php echo ROOT . '/public/Employees/new.php' ?>" class="btn btn-dark" type="button" >New Employee</a>
-		<a href="<?php echo ROOT . '/public/about.php' ?>" class="btn btn-dark" type="button" >About</a>
-		<a href="<?php echo ROOT . '/public/contact.php' ?>" class="btn btn-dark" type="button" >Contact</a>
+		<a href="<?php echo "/Assignment1/index.php"; ?>" class="btn btn-dark" type="button" >Home</a>
+		<a href="<?php echo "/Assignment1/public/Employees/new.php" ?>" class="btn btn-dark" type="button" >New Employee</a>
+		<a href="<?php echo  '/Assignment1/public/about.php' ?>" class="btn btn-dark" type="button" >About</a>
+		<a href="<?php echo  '/Assignment1/public/contact.php' ?>" class="btn btn-dark" type="button" >Contact</a>
 	    </ul>
 	</div>
     </nav>
-    
+
 </head>
 
 
