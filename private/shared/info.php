@@ -16,7 +16,7 @@
 	    
             <a href="<?php echo '/Assignment1/public/Employees/show.php?id=' . h(u($employee->id)) ?>"
 	       class="btn btn-primary col-md-3 col-md-offset-1.5 ">Show</a>
-            <a href="<?php echo '/Assignment1/public/Employees/edit.php?id=' .h(u($employee->id)) ?>"
+            <a href="#"
 	       class="btn btn-warning col-md-3  ">Edit</a>
             <a href="<?php echo '/Assignment1/public/Employees/delete.php?id=' . h(u($employee->id)); ?>"
 	       class="btn btn-danger col-md-3 col-md-offset-1.5 ">Delete</a>

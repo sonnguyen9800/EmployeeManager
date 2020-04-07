@@ -26,6 +26,10 @@ $all_employees = show_all_employees();
         include(SHARED_PATH . '/alert-failed.php');
     }elseif($_GET['status'] == 'delete'){
         include(SHARED_PATH . '/alert-deletedone.php');
+    }elseif($_GET['status'] == 'edit-failed'){
+	include(SHARED_PATH . '/alert-edit-fail.php');
+    }elseif($_GET['status'] == 'edit-success'){
+	include(SHARED_PATH . '/alert-edit-success.php');
     }
 
 
@@ -39,14 +43,11 @@ $all_employees = show_all_employees();
 	//$count = 0;
 	foreach ($all_employees as $i_employee){
 	    $employee = $i_employee;
-	    include(SHARED_PATH . '/card.php');
-	    
+	    include(SHARED_PATH . '/card.php');	    
 	}
 	?>
-
-
-
     </div>
+    
 </html>
 
 

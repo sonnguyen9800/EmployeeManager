@@ -50,6 +50,52 @@ function find_employee_by_id($id){
     return "fail";
 }
 
+function edit_employee_by_id($id, $employee_array){
+    $file = get_csv_file();
+    $all_employees = get_all_employees($file);    
+    $file_towrite = fopen(PRIVATE_PATH . '/Employees.csv', "w");
+    $beginning = array("id", "first_name", "last_name","gender", "age", "address","phone_number");
+    fputcsv($file_towrite, $beginning);
+
+    foreach ($all_employees as $employee){
+        if ($employee->id != $id){
+            $array= array("id"=> $employee->id,"first_name"=> $employee->first_name,
+                          "last_name"=> $employee->last_name,"gender"=> $employee->gender,
+                          "age"=> $employee->age, "address"=> $employee->address,"phone_number" => $employee->phone_number );
+            fputcsv($file_towrite, $array);   
+        }
+    }
+    fclose($file_towrite);
+
+
+    if ($employee_array['id']==''){
+        redirect_after_post("/Assignment1/index.php", "failed");
+    }
+    $file = get_csv_file();
+    $all_employees = get_all_employees($file);
+    $flag = 1;
+    foreach ($all_employees as $i_employee){
+        if ($i_employee->id == $employee_array['id']){
+            $flag = 0;
+            break;
+        }
+    }
+    if ($flag == 1){
+        //permit insertion
+        $write_file = get_csv_file_towrite();
+        fputcsv($write_file, $employee_array);
+        fclose($write_file);
+        redirect_after_post("/Assignment1/index.php", "edit-success");
+    }else {
+        //deny insertion
+
+        redirect_after_post("/Assignment1/index.php", "edit-failed");
+    }
+
+
+}
+
+
 function delete_employee_by_id($id){
     $file = get_csv_file();
     
