@@ -11,14 +11,10 @@ $page_title = "Manager";
  * echo $s;*/
 $all_employees = show_all_employees();
 ?>
-
-
 <html>
-
-
     <?php include(SHARED_PATH . '/jumbotron.php') ; ?>
 
-    <div class="main-body container border">
+    <div class="main-body container border" id="myUL">
         <h1>Your Employees here</h1>
 	<?php
 	$count = 0;
@@ -29,10 +25,7 @@ $all_employees = show_all_employees();
 	    }
 	    $count +=1;
 	}
-	?>
-	
-
-	
+	?>	
     </div>
 
 </html>

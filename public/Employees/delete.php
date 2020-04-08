@@ -3,21 +3,18 @@
 require_once('../../private/initialize.php');
 $page_title = "Delete Employee";
 if(!isset($_GET['id'])) {
-    redirect('/Assignment1/index.php');
+    redirect('/index');
 }
 $id = $_GET['id'];
 
 if(is_post_request()) {
     delete_employee_by_id($id);
-    //Delete the record from csv file
-    // $result = delete_subject($id);
-    //redirect_to(url_for('/staff/subjects/index.php'));
 } else {
     // Just finding the subject
     //$subject = find_subject_by_id($id);
     $employee = find_employee_by_id($id);
     if ($employee == "fail"){
-	redirect('/Assignment1/index.php');
+	redirect('/index');
     }
 }
 
@@ -35,7 +32,7 @@ if(is_post_request()) {
 
     <div class="main-body container">
 	
-	<form action="<?php echo '/Assignment1/public/Employees/delete.php?id=' . h(u($employee->id)); ?>" method="post">
+	<form action="<?php echo '/Employees/delete?id=' . h(u($employee->id)); ?>" method="post">
 	    <div id="operations">
 		<input class="btn btn-primary btn-block" type="submit" name="commit"
 		       value="<?php echo "Remove '" . $employee->first_name . " ". $employee->last_name . "'"; ?>" />

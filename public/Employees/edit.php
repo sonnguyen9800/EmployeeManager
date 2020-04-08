@@ -10,12 +10,12 @@ $id = $_GET['id'];
 if(is_post_request()) {
     // Handle form values sent by new.php
     $id = $id;
-    $first_name = $_POST['first_name'] ?? '';
-    $last_name = $_POST['last_name'] ?? '';
-    $gender = $_POST['gender'] ?? '';
-    $age = $_POST['age'] ?? '';
-    $address = $_POST['address'] ?? '';
-    $phone_number = $_POST['phone_number'] ?? '';
+    $first_name = $_POST['first_name'] ;
+    $last_name = $_POST['last_name'] ;
+    $gender = $_POST['gender'] ;
+    $age = $_POST['age'] ;
+    $address = $_POST['address'] ;
+    $phone_number = $_POST['phone_number'] ;
 
     $employee_array = array("id" => $id, "first_name" => $first_name,"last_name" => $last_name,
                       "gender"=> $gender, "age" => $age, "address" => $address,  "phone_number"=> $phone_number);
@@ -38,8 +38,9 @@ if(is_post_request()) {
     ?>
 
     <div class="main-body container">
-	
-	<form action= "<?php echo "/Assignment1/public/Employees/edit.php?id=" . h(u($employee->id));  ?>" method="POST" >	    
+	<!-- "<?php// echo "/Assignment1/public/Employees/edit.php?id=" . h(u($employee->id));  ?>" -->
+
+	<form action="<?php echo "/Employees/edit?id=" . h(u($employee->id));  ?>" method="POST" >	    
 	    <div class="form-group">
 		<label for="first_name">First Name</label>
 		<input name="first_name" type="text" class="form-control" id="first_name" value="<?php echo $employee->first_name; ?>">

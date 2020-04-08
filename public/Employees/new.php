@@ -14,8 +14,10 @@ $page_title = "New Employee";
     ?>
 
     <div class="main-body container">
+
+	<?php // echo "/Assignment1/public/Employees/create.php"?>
 	
-	<form action= "<?php echo "/Assignment1/public/Employees/create.php"?>" method="POST" >
+	<form action= "<?php echo "/Employees/create"?>" method="POST" >
 	    <div class="form-group">
 		<label for="id">Identification Number (ID)</label>
 		<input name="id" type="number" class="form-control" id="id">

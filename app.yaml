@@ -1,7 +1,30 @@
 runtime: php55
 api_version: 1
+
 handlers:
-  - url: /home
-    script: index.php
-  - url: /
-    script: index.php
+ - url: /
+   script: index.php
+ - url: /index
+   script: index.php
+ - url: /contact
+   script: public/contact.php
+ - url: /about
+   script: public/about.php
+ - url: /Employees/new
+   script: public/Employees/new.php
+ - url: /Employees/show
+   script: public/Employees/show.php
+ - url: /Employees/edit
+   script: public/Employees/edit.php
+ - url: /Employees/delete
+   script: public/Employees/delete.php
+ - url: /Employees/create
+   script: public/Employees/create.php
+ - url: /stylesheets
+   script: public/styles/styles.css
+ - url: /test
+   script: test.php
+ - url: /add
+   script: add.php
+ - url: /write
+   script: write.php
