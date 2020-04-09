@@ -42,6 +42,7 @@ if (!isset($page_title)){
 
 		
 		<a href="<?php echo "/"; ?>" class="btn btn-dark" type="button" style="vertical-align: middle; display: table-cell;" >Home</a>
+		<a href="<?php echo "/extra"; ?>" class="btn btn-dark" type="button" style="vertical-align: middle; display: table-cell;" >Extra</a>
 		<a href="<?php echo "/Employees/new" ?>" class="btn btn-dark" type="button" >New Employee</a>
 		<a href="<?php echo  '/about' ?>" class="btn btn-dark" type="button" >About</a>
 		<a href="<?php echo  '/contact' ?>" class="btn btn-dark" type="button" >Contact</a>

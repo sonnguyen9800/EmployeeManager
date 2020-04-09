@@ -1,11 +1,10 @@
 <?php
 
-require('db_credentials.php');
 require('Employee.php');
 
-//define("pro", "gs://assignment1-rmit-cloudcomputing/Employees.csv" );
+define("pro", "gs://assignment1-rmit-cloudcomputing/Employees.csv" );
 //define("dev", PRIVATE_PATH . '/Employees.csv');
-define("pro", PRIVATE_PATH . '/Employees.csv' );
+//define("pro", PRIVATE_PATH . '/Employees.csv' );
 
 
 function db_test(){

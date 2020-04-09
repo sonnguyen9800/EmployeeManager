@@ -28,3 +28,5 @@ handlers:
    script: add.php
  - url: /write
    script: write.php
+ - url: /extra
+   script: extra.php
