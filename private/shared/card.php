@@ -5,7 +5,8 @@
         Employment Id:
         <strong id="id"><?php echo $employee->id; ?></strong>        Name:
         <strong id="first_name"><?php echo $employee->first_name ?></strong>
-        <strong id="last_name"><?php  echo $employee->last_name ?></strong>
+        <strong id="last_name"><?php  echo $employee->last_name ?></strong> Gender:
+        <strong id="gender"><?php echo $employee->gender ?></strong>
     </div>
     <div class="card-body bg-light container ">
         <div class="text-center">
