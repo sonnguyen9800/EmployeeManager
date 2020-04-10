@@ -3,6 +3,8 @@
 require_once('../../private/initialize.php');
 
 if (is_post_request()){
+    /* Very simple, this file is linked from new.php. From the parameters from new.php, it will create object and insert employee into the file*/
+    
     $id = $_POST['id'] ;
     $first_name = $_POST['first_name'] ;
     $last_name = $_POST['last_name'] ;

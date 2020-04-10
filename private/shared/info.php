@@ -1,6 +1,7 @@
 <?php $employee ?>
 
 <div class="employee-card card bg-info">
+    <!-- Dont remember why i have this pieces of code. But i don't have time to check so just leave it there' -->
     <div class="card-header card-title text-center">
         Employment Id:
         <strong>

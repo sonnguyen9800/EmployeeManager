@@ -1,6 +1,7 @@
 <?php
 ob_start();
 
+/* Define important path*/
 
 define("PRIVATE_PATH", dirname(__FILE__));
 define("PROJECT_PATH", dirname(PRIVATE_PATH));

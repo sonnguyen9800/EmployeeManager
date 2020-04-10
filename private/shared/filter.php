@@ -1,4 +1,6 @@
 <div class="container block">
+    <!-- Filter, this is ued to filter the employees, used to search employees, filt employees by age, name, gender -->
+
     <div class="h-10 row">
         <div class="col">
             <input class="searchinput" type="text" id="myInput" onkeyup="filter()" placeholder="Search by names..">

@@ -3,14 +3,19 @@ require_once('private/initialize.php');
 $page_title = "Homepage";
 if (!isset($_GET['status'])) {
     $_GET['status'] = "None";
-}?>
-
-<?php include(SHARED_PATH. '/header.php'); ?>
-<?php $all_employees = show_all_employees(); ?>
+}
+// Include the header
+include(SHARED_PATH. '/header.php');
+// Get all Employees
+$all_employees = show_all_employees();
+?>
 
 
 <html>
-    <?php if ($_GET['status'] == 'success') {
+    <?php
+    //Check params status to show alert bar after user delete, add, edit any employee
+    
+    if ($_GET['status'] == 'success') {
 	include(SHARED_PATH.'/alert-success.php');
     }elseif($_GET['status'] == 'failed') {
 	include(SHARED_PATH. '/alert-failed.php');
@@ -21,15 +26,17 @@ if (!isset($_GET['status'])) {
     } elseif($_GET['status'] == 'edit-success') {
 	include(SHARED_PATH.'/alert-edit-success.php');
     }
+
+    // Set some variables for the jumbotron
     $jumbotron_title = "Welcome";
     $jumbotron_subtext = "Be the big boss and control your army!";
     include(SHARED_PATH.'/jumbotron.php');
+
+    // Include the filter bar to search, filter employee
     include(SHARED_PATH.'/filter.php');
     ?>
-
-
     
-
+    <!-- List of all employees -->
     <div class = "main-body container border employee-card" id = "myUL" >
     <?php 
     foreach($all_employees as $i_employee) {
@@ -40,7 +47,8 @@ if (!isset($_GET['status'])) {
 
 </html>
 
-<script > 
+<script >
+ // function to filter
  function filter() {
     /* get the gender*/
      if (document.getElementById('gender-default').checked) {
@@ -60,25 +68,27 @@ if (!isset($_GET['status'])) {
      var age_input, age_filter;
      age_input = document.getElementById('ageInput');
      age_filter = age_input.value.toUpperCase();
-     
-     var ul, li ;
-     
+
+     //get all necessary DOM element
+     var ul, li ;     
      ul = document.getElementById("myUL");
      li = ul.getElementsByClassName('employee-card');
 
      
      // Loop through all list items, and hide those who don't match the search query
-     for (i = 0; i < li.length; i++) {	 
+     for (i = 0; i < li.length; i++) {
+	 // Get data
          first_name_data = li[i].getElementsByTagName("strong")[1];
          last_name_data = li[i].getElementsByTagName("strong")[2];
          age_data = li[i].getElementsByTagName("strong")[4];
          gender_data = li[i].getElementsByTagName("strong")[3];
-	 
+
+	 // Process from raw data
          nameInput = first_name_data.textContent + " " + last_name_data.textContent;
          ageInput = age_data.textContent;
 	 genderInput = gender_data.textContent;
 	 
-         //First check route
+         //Analyze data and make decision
          if (nameInput.toUpperCase().indexOf(name_filter) > -1 && 
 	     ageInput.toUpperCase().indexOf(age_filter) > -1 &&
 	     (genderInput == gender_value || gender_value == 'default')) {

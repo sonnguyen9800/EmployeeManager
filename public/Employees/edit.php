@@ -1,12 +1,14 @@
 <?php
-
+// Simple initialize
 require_once('../../private/initialize.php');
 
 if(!isset($_GET['id'])) {
     redirect('/Assignment1/index.php');
 }
+
 $id = $_GET['id'];
 
+// Check if post request is sent to this page
 if(is_post_request()) {
     // Handle form values sent by new.php
     $id = $id;
@@ -27,16 +29,21 @@ if(is_post_request()) {
 
 ?>
 
-<?php $page_title = 'Edit Employee'; ?>
+<?php
+// Set page title and include the header
+$page_title = 'Edit Employee'; ?>
 <?php include(SHARED_PATH . '/header.php'); ?>
 
 <div id="content">
     <?php
+
+    // As usual, we set the parameters for the jumbotron
     $jumbotron_title = "Employee";
     $jumbotron_subtext = "Edit employee id " . $employee->id;
     include(SHARED_PATH . '/jumbotron.php');
     ?>
 
+    <!-- A form to edit -->
     <div class="main-body container">
 	<!-- "<?php// echo "/Assignment1/public/Employees/edit.php?id=" . h(u($employee->id));  ?>" -->
 

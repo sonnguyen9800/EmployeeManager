@@ -1,5 +1,7 @@
 <?php
 class Employee {
+
+    /* Employee attributes*/    
     var $id;
     var $first_name;
     var $last_name;
@@ -9,6 +11,8 @@ class Employee {
     var $phone_number;
     var $first_name_freq;
     var $last_name_freq;
+
+    /* Constructor from csv line*/
     public function __construct($row_csv)
     {
         $this->id = $row_csv[0] ;

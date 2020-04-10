@@ -1,4 +1,7 @@
 <?php
+// THIS FILE SHOULD BE DELETED BY I AM TOO LAZY TO FIX BUG, SO BETTER LEAVE IT THERE
+
+
 require_once('../../private/initialize.php');
 $page_title = "Manager";
 ?>

@@ -6,7 +6,7 @@ define("pro", "gs://assignment1-rmit-cloudcomputing/Employees.csv" );
 //define("dev", PRIVATE_PATH . '/Employees.csv');
 //define("pro", PRIVATE_PATH . '/Employees.csv' );
 
-
+// This is function used to test the connection between the app and the database
 function db_test(){
     //    $file = get_csv_file();
     
@@ -18,23 +18,27 @@ function db_test(){
     }
 }
 
-
+//Open csv file to read
 function get_csv_file(){
     $file = fopen(pro, "r");
     return $file;
 }
 
+// Open CSV file to write (append)
 function get_csv_file_towrite(){
     $file = fopen(pro, "
 a");
     return $file;
 }
 
+// Create new csv file
 function create_new_file(){
     $file = fopen(pro, "w"); 
     return $file;
 }
 
+
+// Return a list of employee (Object) from a file
 function get_all_employees($file){
     $all_employees = array();
     while(! feof($file)){
@@ -50,14 +54,18 @@ function get_all_employees($file){
 }
 
 
+// Return a list of employees from the predefined file
 function show_all_employees(){
     $file = get_csv_file();
     return get_all_employees($file);
 }
 
+
+// Return employee by id
 function find_employee_by_id($id){
     $file = get_csv_file();
     $all_employees = get_all_employees($file);
+    // NOrmal for loop to search the employee
     foreach ($all_employees as $employee){
         if ($employee->id == $id){
             return $employee;
@@ -66,13 +74,17 @@ function find_employee_by_id($id){
     return "fail";
 }
 
+// Edit the employee by id
 function edit_employee_by_id($id, $employee_array){
     $file = get_csv_file();
-    $all_employees = get_all_employees($file);    
-    $file_towrite = create_new_file();
-    
+    $all_employees = get_all_employees($file);
+
+    // Make new file (overwrite) then add the header for the csv file
+    $file_towrite = create_new_file();   
     $beginning = array("id", "first_name", "last_name","gender", "age", "address","phone_number");
     fputcsv($file_towrite, $beginning);
+
+    // Push the old data to the new file, except the record whose id matched the focused one (the one that is edited)
     foreach ($all_employees as $employee){
         if ($employee->id != $id){
             $array= array("id"=> $employee->id,"first_name"=> $employee->first_name,
@@ -81,8 +93,11 @@ function edit_employee_by_id($id, $employee_array){
             fputcsv($file_towrite, $array);
         }
     }
+    // Push the edited record (after finished) to the new file
     $result = fputcsv($file_towrite, $employee_array);
     fclose($file_towrite);
+
+    // Redirect to the /index
     if ($result == FALSE){
         redirect_after_post("/index", "edit-failed");
     }else{
@@ -91,15 +106,18 @@ function edit_employee_by_id($id, $employee_array){
     
 }
 
+// Delete the employee by id
 
 function delete_employee_by_id($id){
     $file = get_csv_file();
-    $all_employees = get_all_employees($file);    
-    $file_towrite = create_new_file();
-    
+    $all_employees = get_all_employees($file);
+
+    // Make new file and add the header to the file (overwrite mode)
+    $file_towrite = create_new_file();    
     $beginning = array("id", "first_name", "last_name","gender", "age", "address","phone_number");
     fputcsv($file_towrite, $beginning);
 
+    // Add all employees (except the selected one) to the new file
     foreach ($all_employees as $employee){
         if ($employee->id != $id){
             $array= array("id"=> $employee->id,"first_name"=> $employee->first_name,
@@ -109,18 +127,22 @@ function delete_employee_by_id($id){
         }
     }
     fclose($file_towrite);
+    // Redirect to /index
     redirect_after_post("/index", "delete");
 }
 
+// Insert new employee
 function insert_one_employee($employee){
+    // Handler for error 1
     if ($employee['id']==''){
         redirect_after_post("/index", "failed");
     }
-
+    // Get list of employees
     $file = get_csv_file();
     $all_employees = get_all_employees($file);
     fclose($file);
 
+    // Search if the id of inserted employee has been existed before
     $flag = 1;
     foreach ($all_employees as $i_employee){
         if ($i_employee->id == $employee['id']){
@@ -147,7 +169,6 @@ function insert_one_employee($employee){
         redirect_after_post("/index", "success");
     }else {
         //deny insertion
-
         redirect_after_post("/index", "failed");
     }
 

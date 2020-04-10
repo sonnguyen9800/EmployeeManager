@@ -1,4 +1,5 @@
 <?php
+// Important Functions
 function error_500(){
     header($_SERVER["SERVER_PROTOCOL"] . " 500 Internal Error");
     exit();

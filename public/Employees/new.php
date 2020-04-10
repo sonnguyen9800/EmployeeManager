@@ -1,18 +1,21 @@
 <?php
+// Standard initialize
+
 require_once('../../private/initialize.php');
 $page_title = "New Employee";
-?>
-
-<?php include(SHARED_PATH . '/header.php'); ?>
+include(SHARED_PATH . '/header.php'); ?>
 
 
 <html>
     <?php
+    // Setting the jumbotron
     $jumbotron_title = "New Employee";
     $jumbotron_subtext = "Make a new Employee in simple way!";
     include(SHARED_PATH . '/jumbotron.php');
     ?>
 
+
+    <!-- A form to create new employee -->
     <div class="main-body container">
 
 	<?php // echo "/Assignment1/public/Employees/create.php"?>

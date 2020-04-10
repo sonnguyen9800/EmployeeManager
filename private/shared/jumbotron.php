@@ -1,7 +1,7 @@
 
 
 <div class="jumbotron jumbotron-fluid">
-
+    <!-- This jumbotron display banner, simple and clean -->
     <div class="container">
 	<h1 class="title display-3 text-center banner" >
 	    <!-- <strong style="font-weight:600;"> -->
