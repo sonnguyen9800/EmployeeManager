@@ -6,7 +6,7 @@
             <input class="searchinput" type="text" id="myInput" onkeyup="filter()" placeholder="Search by names..">
         </div>
         <div class="col">
-            <input class="searchinput" type="text" id="ageInput" onkeyup="filter()" placeholder="Search by age..">
+            <input class="searchinput" type="number" id="ageInput" onkeyup="filter()" placeholder="Search by age..">
         </div>
 
 	<div class="btn-toolbar col justify-content-center align-items-center" data-toggle="buttons" >
