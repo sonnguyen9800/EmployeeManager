@@ -7,7 +7,8 @@ class Employee {
     var $age;
     var $address;
     var $phone_number;
-
+    var $first_name_freq;
+    var $last_name_freq;
     public function __construct($row_csv)
     {
         $this->id = $row_csv[0] ;
@@ -17,6 +18,10 @@ class Employee {
         $this->age = $row_csv[4];
         $this->address = $row_csv[5] ;
         $this->phone_number = $row_csv[6] ;
+
+	/* Extra for name frequency */
+        $this->first_name_freq = '0';
+        $this->last_name_freq = '0';
     }
 
     public function __toString()
