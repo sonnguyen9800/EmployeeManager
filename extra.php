@@ -82,7 +82,7 @@ foreach($all_employees as $i_employee){
     // Set parameters for the jumbotron
     $jumbotron_title = "Welcome";
     if ($year_id != ''){
-	$jumbotron_subtext = "See the frequency of the name for the year" . $year_id;
+	$jumbotron_subtext = "See the frequency of the name for the year " . $year_id;
     } else {
 	$jumbotron_subtext = "See the frequency of the name in all time ";
 
