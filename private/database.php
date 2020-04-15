@@ -1,10 +1,12 @@
 <?php
 
+$database_csv = '' // ENTER THE BUCKET CSV HERE
+
+
 require('Employee.php');
 
-define("pro", "gs://assignment1-rmit-cloudcomputing/Employees.csv" );
-//define("dev", PRIVATE_PATH . '/Employees.csv');
-//define("pro", PRIVATE_PATH . '/Employees.csv' );
+define("pro", $database_csv );
+
 
 // This is function used to test the connection between the app and the database
 function db_test(){

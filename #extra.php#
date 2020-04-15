@@ -36,18 +36,14 @@ $client = new Google_Client();
 $client->useApplicationDefaultCredentials();
 $client->addScope(Google_Service_Bigquery::BIGQUERY);
 $bigquery = new Google_Service_Bigquery($client);
-
-
-$projectId = ''; // ENTER THE PROJECT ID HERE
-$tableID =''; // ENTER THE TABLE ID HERE
-
+$projectId = 'assignment1-cloudcomputing';
 $request = new Google_Service_Bigquery_QueryRequest();
 // Authentication ends
 
 //Make Query
 foreach($all_employees as $i_employee){
     // FIRST QUERY on FIRST NAME
-    $request->setQuery("#standardSQL \r\n SELECT SUM(Frequency) FROM `". $projectId ."` WHERE Name='"
+    $request->setQuery("#standardSQL \r\n SELECT SUM(Frequency) FROM `assignment1-cloudcomputing.assignment1.baby_name` WHERE Name='"
 		      .$i_employee->first_name . $str_query_time );
     //Get the respone
     $response = $bigquery->jobs->query($projectId, $request);
@@ -63,7 +59,7 @@ foreach($all_employees as $i_employee){
     $i_employee->first_name_freq=$str;
 
     // SECOND QUERY ON LAST NAME
-    $request->setQuery("#standardSQL \r\n SELECT SUM(Frequency) FROM `". $projectId ."` WHERE Name='"
+    $request->setQuery("#standardSQL \r\n SELECT SUM(Frequency) FROM `assignment1-cloudcomputing.assignment1.baby_name` WHERE Name='"
 		      .$i_employee->last_name . $str_query_time  );
     //Get the respone
     $response = $bigquery->jobs->query($projectId, $request);
