@@ -1,6 +1,4 @@
-# Project Title
-Employee Management System
-
+# Employee Management System
 
 ## Tool I used:
 - PHP
