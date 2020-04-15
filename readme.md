@@ -1,6 +1,17 @@
 # Project Title
 Employee Management System
 
+
+## Tool I used:
+- PHP
+- Emacs
+- Git
+- Gcloud 
+- HTML/CSS
+- Bootstrap
+- A little javascript on front-end (extra.php)
+- Knowledge on csv file
+
 ## Introduction
 - Project for studying
 - Employee management system: provides CRUD to manage employees
@@ -39,6 +50,12 @@ On terminal: gcloud app deploy
 ## Authors
 
 sonnguyen9800
+
+## What can be improved:
+- Authentication and Register functions
+- More validation on input
+- Using more formal database (csv is used because the lecture asked )
+- Better UI, etc
 
 ## License
 
